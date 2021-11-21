@@ -21,3 +21,23 @@ public:
         return p;
     }
 };
+
+/*******another one with o(n) time ************/
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& v, int target) {
+       
+         int h=v.size()-1;
+        int l=0;
+        while(v[l]+v[h]!=target)
+        {
+            if(v[h]+v[l]<target)
+                l++;
+            else
+                h--;
+        }
+        
+         
+        return {l+1,h+1};
+    }
+};
